@@ -1,3 +1,15 @@
+blanket (0:0.4.1) focal; urgency=medium
+
+  * force downgrade release
+
+ -- Archisman Panigrahi <apandada1@gmail.com>  Sun, 07 Nov 2021 10:49:36 +0530
+
+blanket (0.4.1~ubuntu20.10.1) groovy; urgency=low
+
+  * Auto build.
+
+ -- Archisman Panigrahi <apandada1@gmail.com>  Tue, 27 Apr 2021 05:27:54 +0000
+
 blanket (0.4.1) focal; urgency=medium
 
   * Translations update

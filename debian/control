@@ -9,7 +9,8 @@ Build-Depends: debhelper-compat(=10),
 	pkg-config,
 	libglib2.0-dev,
 	libadwaita-1-dev,
-	appstream
+	appstream,
+	blueprint-compiler
 Standards-Version: 4.5.0
 Rules-Requires-Root: no
 Homepage: https://github.com/rafaelmardojai/blanket

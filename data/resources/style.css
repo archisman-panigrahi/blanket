@@ -1,8 +1,72 @@
 
-.soundrow {
-    padding: 8px;
+.preset-row {
+    padding: 6px 12px;
+    min-height: 40px;
+}
+.preset-row.selected label {
+    font-weight: bold;
 }
 
-.preset-selector.selected label {
-    font-weight: bold;
+.volume-separator {
+    margin-bottom: 0;
+}
+
+.volume-row {
+    padding: 0;
+}
+.volume-row:hover {
+    background: none;
+}
+.volume-row label {
+    padding: 12px 0 0 12px;
+}
+.volume-row scale {
+    padding: 6px 12px 12px;
+}
+
+button.playpause {
+    padding: 6px;
+}
+
+.sound-view {
+    background: @window_bg_color;
+    padding: 12px;
+}
+
+.sound-item {
+    border-radius: 12px;
+    padding: 12px;
+    padding-bottom: 6px;
+}
+
+.sound-item:hover {
+    background: alpha(currentColor, .04);
+}
+
+.sound-item image {
+    border-radius: 76px;
+    padding: 12px;
+}
+
+.sound-item image.accent {
+    background: alpha(@accent_bg_color, 0.2);
+}
+
+.sound-item > box scale {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sound-item > box scale trough slider {
+    opacity: 0;
+}
+
+.sound-item > box scale trough highlight {
+    min-height: 9px;
+    min-width: 9px;
+}
+
+.sound-item > box scale trough highlight:disabled {
+    color: @window_fg_color;
+    background: alpha(currentColor, .30);
 }

@@ -1,176 +1,108 @@
 # Copyright 2020-2021 Rafael Mardojai CM
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from gi.repository import GObject, Gst
-try:
-    from gi.repository.GstPlay import Play as GStreamerPlay
-except ImportError:
-    from gi.repository.GstPlayer import Player as GStreamerPlay
+from gi.repository import GObject
 
+from blanket.define import RES_PATH
+from blanket.main_player import MainPlayer
+from blanket.player import Player
 from blanket.settings import Settings
 
 
-class MainPlayer(GObject.GObject):
+class Sound(GObject.Object):
     """
-    Virtual app sounds player
+    Describe a sound with it's properties
     """
-    __gtype_name__ = 'MainPlayer'
-    __gsignals__ = {
-        'preset-changed': (GObject.SIGNAL_RUN_FIRST, None, ()),
-        'reset-volumes': (GObject.SIGNAL_RUN_FIRST, None, ())
-    }
 
-    playing = GObject.Property(type=bool, default=True)
-    volume = GObject.Property(type=float, default=0)
+    __gtype_name__ = 'Sound'
 
-    def __init__(self):
+    playing: bool = GObject.Property(type=bool, default=False)  # type: ignore
+    title: str = GObject.Property(type=str)  # type: ignore
+    icon_name: str = GObject.Property(type=str)  # type: ignore
+
+    def __init__(
+        self,
+        name: str,
+        uri: str | None = None,
+        title: str | None = None,
+        custom: bool | None = False,
+    ):
         super().__init__()
 
-    def preset_changed(self):
-        self.playing = True
-        self.emit('preset-changed')
+        resource = f'resource:{RES_PATH}/sounds/{name}.ogg'
+        icon = 'com.rafaelmardojai.Blanket-{}'
 
-    def reset_volumes(self):
-        self.emit('reset-volumes')
+        # Internal player
+        self._player = None
 
-
-class SoundObject(GObject.Object):
-    """
-    Describe a sound with it's propeties
-    """
-    __gtype_name__ = 'SoundObject'
-
-    def __init__(self, name, uri=None, title=None, mainplayer=None,
-                 custom=False, **kwargs):
-        super().__init__(**kwargs)
-
-        resource_tmpl = 'resource:/com/rafaelmardojai/Blanket/sounds/{}.ogg'
-        icon_tmpl = 'com.rafaelmardojai.Blanket-{}'
-
+        # Sound properties
         self.name = name
-        self.uri = uri if uri else resource_tmpl.format(name)
+        self.uri = uri if uri else resource
         self.title = title if title else name
-        self.icon_name = icon_tmpl.format('sound-wave' if custom else name)
-        self.mainplayer = mainplayer
+        self.icon_name = icon.format('sound-wave' if custom else name)
         self.custom = custom
 
+        # Playing state
+        self.connect('notify::playing', self._playing_changed)
+        if not self.saved_mute:
+            self.playing = True
+
+        # Connect mainplayer preset-changed signal
+        MainPlayer.get().connect('preset-changed', self._on_preset_changed)
+        # Connect mainplayer reset-volumes signal
+        MainPlayer.get().connect('reset-volumes', self._on_reset_volumes)
+
     @property
-    def saved_volume(self):
+    def player(self) -> Player:
+        """Internal player"""
+        if self._player is None:
+            self._player = Player(self)
+        return self._player
+
+    @GObject.Property(type=float)
+    def saved_volume(self) -> float:  # type: ignore
         return Settings.get().get_sound_volume(self.name)
 
     @saved_volume.setter
-    def saved_volume(self, volume):
+    def saved_volume(self, volume: float):
+        volume = round(volume, 2)
+        self.player.set_virtual_volume(volume)
         Settings.get().set_sound_volume(self.name, volume)
 
+        if volume != 0 and not self.playing:
+            self.playing = True
+
     @property
-    def saved_mute(self):
+    def saved_mute(self) -> bool:
         return Settings.get().get_sound_mute(self.name)
 
     @saved_mute.setter
-    def saved_mute(self, mute):
+    def saved_mute(self, mute: bool):
         Settings.get().set_sound_mute(self.name, mute)
 
     def remove(self):
+        """Remove sound if it is custom"""
         if self.custom:
+            self.player.set_virtual_volume(0)
             Settings.get().remove_custom_audio(self.name)
 
-
-class SoundPlayer(GStreamerPlay):
-    """
-    GstPlayer.Player with modifications
-    """
-    __gtype_name__ = 'SoundPlayer'
-
-    def __init__(self, sound):
-        super().__init__()
-        self.sound = sound
-        # Create a var to save saved volume
-        self.saved_volume = 0.0
-        # Alwas start with volume in 0
-        self.set_volume(0)
-
-        # Set SoundObject.uri as player uri
-        self.set_uri(self.sound.uri)
-        self.name = self.sound.name
-
-        # Loop setup
-        self.prerolled = False
-        self.pipeline = self.get_pipeline()
-        bus = self.pipeline.get_bus()
-        bus.add_signal_watch()
-        bus.connect('message', self._on_bus_message)
-
-        # Connect mainplayer volume signal
-        self.volume_hdlr = self.sound.mainplayer.connect(
-            'notify::volume',
-            self._on_main_volume_changed)
-        # Connect mainplayer muted signal
-        self.playing_hdlr = self.sound.mainplayer.connect(
-            'notify::playing',
-            self._on_playing_changed)
-
-        # Connect volume-changed signal
-        self.connect('notify::volume', self._on_volume_changed)
-
-    def set_virtual_volume(self, volume):
-        # Get last saved sound volume
-        self.saved_volume = volume
-        # Multiply sound volume with mainplayer volume
-        volume = self.saved_volume * self.sound.mainplayer.volume
-        # Set final volume to player
-        self.set_volume(volume)
-
-    def remove(self):
-        # Stop player
-        self.stop()
-        # Disconnect main player signals
-        self.sound.mainplayer.disconnect(self.volume_hdlr)
-        self.sound.mainplayer.disconnect(self.playing_hdlr)
-
-    def _on_playing_changed(self, _player, _volume):
-        if not self.__vol_zero():
-            if self.sound.mainplayer.playing:
-                self.play()
+    def _playing_changed(self, _object, _pspec):
+        # Toggle player mute state
+        if self.playing:
+            if self.saved_volume > 0:
+                self.player.set_virtual_volume(self.saved_volume)
             else:
-                self.pause()
+                self.player.set_virtual_volume(0.5)
+                self.saved_volume = 0.5
+        else:
+            self.player.set_virtual_volume(0)
 
-    def _on_volume_changed(self, _player, _volume):
-        # Fix external changes to player volume
-        volume = self.saved_volume * self.sound.mainplayer.volume
-        if volume > 0 and self.get_volume() == 0.0:
-            self.set_volume(self.saved_volume)
-            return
-        # Only play if volume > 0
-        if self.__vol_zero():
-            self.pause()
-        elif self.sound.mainplayer.playing:
-            self.play()
+        self.saved_mute = not self.playing  # Save playing state
 
-    def _on_main_volume_changed(self, _player, _volume):
-        if not self.__vol_zero(self.sound.saved_volume):
-            # Set volume again when mainplayer volume changes
-            self.set_virtual_volume(self.saved_volume)
+    def _on_preset_changed(self, _player, _preset):
+        self.notify('saved_volume')
+        self.playing = not self.saved_mute
 
-    def _on_bus_message(self, _bus, message):
-        if message:
-            if message.type is Gst.MessageType.SEGMENT_DONE:
-                self.pipeline.seek_simple(
-                    Gst.Format.TIME,
-                    Gst.SeekFlags.SEGMENT,
-                    0
-                )
-
-            if message.type is Gst.MessageType.ASYNC_DONE:
-                if not self.prerolled:
-                    self.pipeline.seek_simple(
-                        Gst.Format.TIME,
-                        Gst.SeekFlags.FLUSH | Gst.SeekFlags.SEGMENT,
-                        0
-                    )
-                    self.prerolled = True
-
-            return True
-
-    def __vol_zero(self, volume=None):
-        volume = volume if volume else self.get_volume()
-        return True if volume == 0 else False
+    def _on_reset_volumes(self, _player):
+        self.saved_volume = 0.0
+        self.playing = False

@@ -5,6 +5,9 @@
         <key type="b" name="autostart">
             <default>false</default>
         </key>
+        <key type="b" name="start-paused">
+            <default>false</default>
+        </key>
         <key type="b" name="dark-mode">
             <default>false</default>
         </key>
@@ -47,6 +50,10 @@
         </key>
         <key type="a{sb}" name="sounds-mute">
             <default>{}</default>
+        </key>
+
+        <key type="b" name="hide-inactive">
+            <default>false</default>
         </key>
     </schema>
 </schemalist>

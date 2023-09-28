@@ -5,7 +5,7 @@
 New sounds are welcomed, both to **add** different sounds or to **replace** the existing ones to improve them.
 
 Before adding them, the soundclips must pass a criterion:
-* **Appropiate license:** their licenses must let us use the clip. Those are licenses such as `CC BY (SA)` and `CC0`. If the sound is yours, there's no problem; we will always inform the authorship.
+* **Appropriate license:** their licenses must let us use the clip. Those are licenses such as `CC BY (SA)` and `CC0`. If the sound is yours, there's no problem; we will always inform the authorship.
 * **Technical criterion:** explained below. You can measure and fit the sounds by yourself or let us do it for you; open an [issue](https://github.com/rafaelmardojai/blanket/issues) for this.
 * **Ogg Vorbis format**
 
@@ -46,6 +46,6 @@ If your sounds passed the criterion, you can add the sounds in your cloned local
 ### Icons
 Sounds must have a hair-style symbolic icon. 
 
-If you don't have an icon and your sound has been aproved, you can wait for someone in the communty to contribute one. But no sound will be included in the app without a proper icon.
+If you don't have an icon and your sound has been approved, you can wait for someone in the community to contribute one. But no sound will be included in the app without a proper icon.
 _______
 _More documentation here:_ [**Sounds_documentation.md**](https://github.com/rafaelmardojai/blanket/blob/master/doc/Sound_documentation.md)

@@ -22,17 +22,22 @@ configure_file(
   install_dir: get_option('bindir')
 )
 
+# Python sources
 sources = [
   '__init__.py',
+  'define.py',
+  'main_player.py',
   'main.py',
   'window.py',
+  'player.py',
   'preferences.py',
-  'presets.py',
-  'about.py',
+  'preset.py',
   'sound.py',
-  'widgets.py',
   'settings.py',
   'mpris.py'
 ]
 
 install_data(sources, install_dir: moduledir)
+
+# Install custom widgets
+install_subdir('widgets', install_dir: moduledir)

@@ -129,18 +129,17 @@ class BlanketWindow(Adw.ApplicationWindow):
             else:
                 Settings.get().remove_custom_audio(name)
 
-                message = Adw.MessageDialog.new(
-                    self,
+                alert = Adw.AlertDialog.new(
                     _('Sound Automatically Removed'),
                     _(
                         'The {name} sound is no longer accessible, so it has been removed'
                     ).format(name=f'<b><i>{name}</i></b>'),
                 )
-                message.add_response('accept', _('Accept'))
-                message.props.body_use_markup = True
-                message.props.default_response = 'accept'
-                message.props.close_response = 'accept'
-                message.present()
+                alert.add_response('accept', _('Accept'))
+                alert.props.body_use_markup = True
+                alert.props.default_response = 'accept'
+                alert.props.close_response = 'accept'
+                alert.present(self)
 
     def open_audio(self):
         def on_response(_filechooser, _id):
@@ -167,16 +166,19 @@ class BlanketWindow(Adw.ApplicationWindow):
                 'audio/x-wav',
                 'audio/wav',
                 'audio/mpeg',
+                'audio/aac',
             ],
             'Ogg': ['audio/ogg'],
             'FLAC': ['audio/flac'],
             'WAV': ['audio/x-wav', 'audio/wav'],
             'MP3': ['audio/mpeg'],
+            'AAC': ['audio/aac'],
         }
 
         self.filechooser = Gtk.FileChooserNative.new(  # type: ignore
             _('Open audio'), self, Gtk.FileChooserAction.OPEN, None, None
         )
+        self.filechooser.set_modal(True)
         self.filechooser.connect('response', on_response)
 
         for f, mts in filters.items():

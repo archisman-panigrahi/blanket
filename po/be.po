@@ -3,153 +3,150 @@
 # This file is distributed under the same license as the blanket package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-# Translators:
-# Rafael Mardojai CM <mardojai.cardenas@gmail.com>, 2023
-#
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: blanket\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-07 19:36-0500\n"
-"PO-Revision-Date: 2023-02-16 03:00+0000\n"
-"Last-Translator: Rafael Mardojai CM <mardojai.cardenas@gmail.com>, 2023\n"
-"Language-Team: Indonesian (https://app.transifex.com/rafaelmardojai/"
-"teams/135055/id/)\n"
-"Language: id\n"
+"PO-Revision-Date: 2023-11-20 14:01+0000\n"
+"Last-Translator: Yahor <k1llo2810@protonmail.com>\n"
+"Language-Team: Belarusian <https://hosted.weblate.org/projects/blanket/"
+"blanket/be/>\n"
+"Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.2\n"
 
 #: data/com.rafaelmardojai.Blanket.desktop.in:3
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:6 blanket/main.py:38
 #: blanket/mpris.py:156
 msgid "Blanket"
-msgstr "Blanket"
+msgstr "Коўдра"
 
 #: data/com.rafaelmardojai.Blanket.desktop.in:4 data/resources/about.blp:6
 #: blanket/mpris.py:154
 msgid "Listen to different sounds"
-msgstr "Dengarkan suara yang berbeda"
+msgstr "Слухайце розныя гукі"
 
 #. Translators: These are search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
 #: data/com.rafaelmardojai.Blanket.desktop.in:10
 msgid "Concentrate;Focus;Noise;Productivity;Sleep;"
-msgstr "Konsentrasi;Fokus;Kebisingan;Produktivitas;Tidur;"
+msgstr ""
+"Concentrate;Focus;Noise;Productivity;Sleep;Канцэнтрацыя; Засяроджанасць; "
+"Шум; Прадукцыйнасць; Сон;"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:7
-#, fuzzy
 msgid "Listen to ambient sounds"
-msgstr "Dengarkan suara yang berbeda"
+msgstr "Слухайце гукі навакольнага асяроддзя"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:9
-#, fuzzy
 msgid ""
 "Improve focus and increase your productivity by listening to different "
 "ambient sounds"
 msgstr ""
-"Tingkatkan fokus dan tingkatkan produktivitas Anda dengan mendengarkan suara "
-"yang berbeda"
+"Палепшыце ўвагу і павялічце сваю прадукцыйнасць, слухаючы розныя навакольныя "
+"гукі"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:10
 msgid "Also can help you to fall asleep in a noisy environment."
-msgstr "Juga dapat membantu Anda tertidur di lingkungan yang bising."
+msgstr "Таксама можа дапамагчы вам заснуць у шумным асяроддзі."
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:11
 msgid "Features:"
-msgstr "Fitur:"
+msgstr "Функцыі:"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:13
 msgid "Save presets"
-msgstr "Simpan preset"
+msgstr "Захаваць шаблоны"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:14
 msgid "Add custom sounds"
-msgstr "Tambah suara ubahan"
+msgstr "Дадаць свае гукі"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:15
 msgid "Auto start in background"
-msgstr "Mulai otomatis di latar belakang"
+msgstr "Аўтазапуск у фонавым рэжыме"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:16
 msgid "MPRIS integration"
-msgstr "Integrasi MPRIS"
+msgstr "Інтэграцыя MPRIS"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:18
-#, fuzzy
 msgid "Included Sounds in the App:"
-msgstr "Suara yang disertakan:"
+msgstr "Гукі, якія ёсць у праграме:"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:20 blanket/define.py:18
 #: blanket/define.py:58 blanket/define.py:69
 msgid "Birds"
-msgstr "Burung"
+msgstr "Птушкі"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:21 blanket/define.py:26
 #: blanket/define.py:54 blanket/define.py:73
 msgid "Boat"
-msgstr "Perahu"
+msgstr "Човен"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:22 blanket/define.py:27
 #: blanket/define.py:55 blanket/define.py:74
 msgid "City"
-msgstr "Kota"
+msgstr "Горад"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:23 blanket/define.py:33
 #: blanket/define.py:61
 msgid "Coffee Shop"
-msgstr "Kedai Kopi"
+msgstr "Кавярня"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:24 blanket/define.py:34
 #: blanket/define.py:53
 msgid "Fireplace"
-msgstr "Perapian"
+msgstr "Вогнішча"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:25 blanket/define.py:40
 #: blanket/define.py:62
 msgid "Pink Noise"
-msgstr "Kebisingan Merah Muda"
+msgstr "Ружовы шум"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:26 blanket/define.py:13
 #: blanket/define.py:51 blanket/define.py:70
 msgid "Rain"
-msgstr "Hujan"
+msgstr "Дождж"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:27 blanket/define.py:19
 #: blanket/define.py:59
 msgid "Summer Night"
-msgstr "Malam Musim Panas"
+msgstr "Летняя ноч"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:28 blanket/define.py:14
 #: blanket/define.py:52 blanket/define.py:71
 msgid "Storm"
-msgstr "Badai"
+msgstr "Навальніца"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:29 blanket/define.py:17
 #: blanket/define.py:56
 msgid "Stream"
-msgstr "Aliran"
+msgstr "Ручай"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:30 blanket/define.py:25
 #: blanket/define.py:64
 msgid "Train"
-msgstr "Kereta Api"
+msgstr "Цягнік"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:31 blanket/define.py:16
 #: blanket/define.py:60 blanket/define.py:72
 msgid "Waves"
-msgstr "Ombak"
+msgstr "Хвалі"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:32 blanket/define.py:41
 #: blanket/define.py:57
 msgid "White Noise"
-msgstr "Kebisingan Putih"
+msgstr "Белы шум"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:33 blanket/define.py:15
 #: blanket/define.py:63 blanket/define.py:75
 msgid "Wind"
-msgstr "Angin"
+msgstr "Вецер"
 
 #: data/com.rafaelmardojai.Blanket.metainfo.xml.in:57
 msgid "The default screen in light theme"
@@ -163,168 +160,157 @@ msgstr ""
 #: data/com.rafaelmardojai.Blanket.gschema.xml:45
 msgctxt "visible-name"
 msgid "'Default'"
-msgstr "'Bawaan'"
+msgstr "'Па змаўчанні'"
 
 #: data/resources/about.blp:7
-#, fuzzy
 msgid "Copyright 2020-2022 Rafael Mardojai CM"
-msgstr "Hak Cipta 2020-2021 Rafael Mardojai CM"
+msgstr "Аўтарскія правы, 2020-2022 Rafael Mardojai CM"
 
 #. Translators: Replace me with your names, You can make a mailto link: translator-name <user@domain.org>
 #: data/resources/about.blp:15
 msgctxt "Add your names here, do not remove previous names!"
 msgid "translator-credits"
-msgstr "Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2021-2022."
+msgstr "Yahor Haurylenka <k1llo2810@gmail.com>"
 
 #: data/resources/preferences.blp:7
 msgid "Appearance"
-msgstr "Tampilan"
+msgstr "Афармленне"
 
 #: data/resources/preferences.blp:10
 msgid "Dark Mode"
-msgstr "Mode Gelap"
+msgstr "Цёмны рэжым"
 
 #: data/resources/preferences.blp:15
 msgid "Behavior"
-msgstr "Perilaku"
+msgstr "Паводзіны"
 
 #: data/resources/preferences.blp:18
-#, fuzzy
 msgid "Autostart in Background"
-msgstr "Mulai otomatis di latar belakang"
+msgstr "Аўтазапуск у фонавым рэжыме"
 
 #: data/resources/preferences.blp:22
 msgid "Always Start on Pause"
-msgstr ""
+msgstr "Заўсёды запускаць на паўзе"
 
 #: data/resources/preset-dialog.blp:21
 msgid "Cancel"
-msgstr "Batal"
+msgstr "Скасаваць"
 
 #: data/resources/preset-dialog.blp:29
 msgid "Save"
-msgstr "Simpan"
+msgstr "Захаваць"
 
 #: data/resources/preset-dialog.blp:40
 msgid "Preset Name"
-msgstr "Nama Preset"
+msgstr "Назва шаблона"
 
 #: data/resources/preset-row.blp:32
 msgid "Rename Preset"
-msgstr "Ganti Nama Preset"
+msgstr "Перайменаваць шаблон"
 
 #: data/resources/preset-row.blp:43
 msgid "Delete Preset"
-msgstr "Hapus Preset"
+msgstr "Выдаліць шаблон"
 
 #: data/resources/shortcuts.blp:8
 msgid "General"
-msgstr "Umum"
+msgstr "Агульныя"
 
 #: data/resources/shortcuts.blp:12 data/resources/window.blp:76
-#, fuzzy
 msgid "Play/Pause Sounds"
-msgstr "Putar/Jedakan suara"
+msgstr "Прайграць/прыпыніць гукі"
 
 #: data/resources/shortcuts.blp:17
-#, fuzzy
 msgid "Add Custom Sound"
-msgstr "Tambahkan Suara Ubahan..."
+msgstr "Дадаць свой гук"
 
 #: data/resources/shortcuts.blp:22
-#, fuzzy
 msgid "Close Window"
-msgstr "Tutup jendela"
+msgstr "Закрыць акно"
 
 #: data/resources/shortcuts.blp:27 data/resources/window.blp:105
 msgid "Preferences"
-msgstr "Preferensi"
+msgstr "Налады"
 
 #: data/resources/shortcuts.blp:32 data/resources/window.blp:110
 msgid "Keyboard Shortcuts"
-msgstr "Pintasan Papan Tik"
+msgstr "Спалучэнні клавіш"
 
 #: data/resources/shortcuts.blp:37 data/resources/window.blp:122
 msgid "Quit"
-msgstr "Keluar"
+msgstr "Выйсці"
 
 #: data/resources/window.blp:24
-#, fuzzy
 msgid "Presets Menu"
-msgstr "Preset"
+msgstr "Шаблоны"
 
 #: data/resources/window.blp:31
 msgid "Main Menu"
-msgstr ""
+msgstr "Галоўнае меню"
 
 #: data/resources/window.blp:67
 msgid "Volume Menu"
-msgstr ""
+msgstr "Меню гучнасці"
 
 #: data/resources/window.blp:84
-#, fuzzy
 msgid "Sounds Menu"
-msgstr "Suara oleh"
+msgstr "Меню гукаў"
 
 #: data/resources/window.blp:98
-#, fuzzy
 msgid "Keep Playing when Closed"
-msgstr "Terus Putar Ketika Ditutup"
+msgstr "Працягвайце прайграванне пры закрыцці"
 
 #: data/resources/window.blp:115
 msgid "About Blanket"
-msgstr "Tentang Blanket"
+msgstr "Аб праграме"
 
 #: data/resources/window.blp:137
 msgid "Reset Sounds"
-msgstr ""
+msgstr "Скінуць гукі"
 
 #: data/resources/window.blp:146
-#, fuzzy
 msgid "Hide Inactive Sounds"
-msgstr "Suara yang disertakan:"
+msgstr "Схаваць неактыўныя гукі"
 
 #: data/resources/window.blp:151
-#, fuzzy
 msgid "Save as New Preset…"
-msgstr "Simpan preset"
+msgstr "Захаваць новы шаблон…"
 
 #: data/resources/window.blp:157
-#, fuzzy
 msgid "Add Sound…"
-msgstr "Tambahkan Suara Ubahan..."
+msgstr "Дадаць гук…"
 
 #: data/resources/window.blp:212
 msgid "Paused to save power"
-msgstr ""
+msgstr "Прыпынена для эканоміі энергіі"
 
 #: data/resources/window.blp:214
 msgid "_Resume Playing"
-msgstr ""
+msgstr "_Працягнуць прайграванне"
 
 #: blanket/define.py:11
 msgid "Nature"
-msgstr "Alam"
+msgstr "Прырода"
 
 #: blanket/define.py:23
 msgid "Travel"
-msgstr "Perjalanan"
+msgstr "Вандроўка"
 
 #: blanket/define.py:31
 msgid "Interiors"
-msgstr "Interior"
+msgstr "Памяшканне"
 
 #: blanket/define.py:38
 msgid "Noise"
-msgstr "Kebisingan"
+msgstr "Шум"
 
 #: blanket/define.py:48
 msgid "Sounds icons"
-msgstr "Ikon suara"
+msgstr "Значкі гукаў"
 
 #: blanket/define.py:48
 msgid "App icon"
-msgstr "Ikon aplikasi"
+msgstr "Значок праграмы"
 
 #: blanket/main.py:238
 msgid "Source Code"
@@ -332,23 +318,23 @@ msgstr ""
 
 #: blanket/main.py:239
 msgid "Sounds by"
-msgstr "Suara oleh"
+msgstr "Гукі ад"
 
 #: blanket/main.py:240
 msgid "Sounds edited by"
-msgstr "Suara disunting oleh"
+msgstr "Гукі пад рэдакцыяй"
 
 #: blanket/preferences.py:79
 msgid "Autostart Blanket in background."
-msgstr "Mulai Otomatis Blanket di Latar Belakang."
+msgstr "Аўтазапуск Коўдры ў фонавым рэжыме."
 
 #: blanket/preferences.py:107 blanket/preferences.py:128
 msgid "Request error"
-msgstr "Galat permintaan"
+msgstr "Памылка запыту"
 
 #: blanket/preferences.py:107 blanket/preferences.py:128
 msgid "The autostart request failed."
-msgstr "Permintaan mulai otomatis gagal."
+msgstr "Не ўдалося выканаць запыт на аўтазапуск."
 
 #: blanket/preferences.py:108 blanket/preferences.py:125
 #: blanket/preferences.py:129
@@ -357,7 +343,7 @@ msgstr ""
 
 #: blanket/preferences.py:124
 msgid "Authorization failed"
-msgstr "Autorisasi gagal"
+msgstr "Збой аўтарызацыі"
 
 #: blanket/preferences.py:124
 #, fuzzy
@@ -365,67 +351,44 @@ msgid ""
 "Make sure Blanket has permission to run in the background in Settings → "
 "Applications → Blanket and try again."
 msgstr ""
-"Pastikan Blanket memiliki izin untuk berjalan di\n"
-"latar belakang pada Pengaturan → Aplikasi → \n"
-"Blanket dan coba lagi."
+"Пераканайцеся, што ў Коўдры ёсць дазвол на запуск \n"
+"у фоне ў Наладах → Праграмы → \n"
+"Коўдра і паспрабуйце яшчэ раз."
 
 #: blanket/window.py:133
 msgid "Sound Automatically Removed"
-msgstr ""
+msgstr "Гук аўтаматычна выдалены"
 
 #: blanket/window.py:135
 #, python-brace-format
 msgid "The {name} sound is no longer accessible, so it has been removed"
-msgstr ""
+msgstr "Гук {name} больш недаступны, таму ён быў выдалены"
 
 #: blanket/window.py:138
 msgid "Accept"
-msgstr ""
+msgstr "Прыняць"
 
 #. type: ignore
 #: blanket/window.py:179
 msgid "Open audio"
-msgstr "Buka suara"
+msgstr "Выберыце аўдыё"
 
 #. Add new sound item
 #: blanket/window.py:246
 msgid "Add…"
-msgstr ""
+msgstr "Дадаць…"
 
 #: blanket/widgets/preset_dialog.py:29
-#, fuzzy
 msgid "New Preset"
-msgstr "Preset"
+msgstr "Новы шаблон"
 
 #: blanket/widgets/preset_dialog.py:33
 msgid "Edit Preset"
-msgstr "Sunting Preset"
+msgstr "Рэдагаваць шаблон"
 
 #: blanket/widgets/sound_context_menu.py:24
 msgid "Remove"
-msgstr ""
+msgstr "Выдаліць"
 
 #~ msgid "Rafael Mardojai CM"
 #~ msgstr "Rafael Mardojai CM"
-
-#, fuzzy
-#~ msgid "Keyboard Shortcus"
-#~ msgstr "Pintasan Papan Tik"
-
-#~ msgid "Add Preset…"
-#~ msgstr "Tambah Preset..."
-
-#~ msgid "Reset Volume Levels"
-#~ msgstr "Atur Ulang Tingkat Volume"
-
-#~ msgid "Add custom sound"
-#~ msgstr "Tambah suara ubahan"
-
-#~ msgid "Custom"
-#~ msgstr "Ubahan"
-
-#~ msgid "Add Preset"
-#~ msgstr "Tambah Preset"
-
-#~ msgid "Create"
-#~ msgstr "Buat"

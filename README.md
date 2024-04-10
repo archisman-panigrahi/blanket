@@ -29,7 +29,7 @@ Improve focus and increase your productivity by listening to different sounds. O
 | Distribution | Package | Maintainer |
 |:-:|:-:|:-:|
 | Alpine Linux (edge) | [`blanket`](https://pkgs.alpinelinux.org/packages?name=blanket) | mio |
-| Arch Linux (community) | [`blanket`](https://archlinux.org/packages/community/any/blanket/) | [Balló György](https://github.com/City-busz) |
+| Arch Linux (extra) | [`blanket`](https://archlinux.org/packages/extra/any/blanket/) | [Balló György](https://github.com/City-busz) |
 | Fedora (Copr) | Copr: [`tuxino/Blob`](https://copr.fedorainfracloud.org/coprs/tuxino/Blob/), package: `blanket` | Tuxino |
 | NixOS | [`blanket`](https://search.nixos.org/packages?channel=unstable&show=blanket&from=0&size=50&sort=relevance&type=packages&query=blanket) | onny |
 | openSUSE  | [`blanket`](https://build.opensuse.org/package/show/multimedia%3Aapps/blanket) | [Michael Vetter](https://github.com/jubalh) |
@@ -45,7 +45,7 @@ You can clone and run from GNOME Builder.
 - Python 3 `python`
 - PyGObject `python-gobject`
 - GTK4 `gtk4`
-- libadwaita (>= 1.1.0) `libadwaita`
+- libadwaita (>= 1.5.0) `libadwaita`
 - GStreamer 1.0 `gstreamer`
 - Meson `meson`
 - Ninja `ninja`
@@ -72,3 +72,8 @@ For detailed information about sounds licensing, [check this file](https://githu
 
 ## Donate
 If you want to support my work, you can donate me, [here you can find how](https://rafaelmardojai.com/donate/).
+
+## Related Projects
+- [feeltheblow](https://feeltheblow.web.app/) - Web App inspired by Blanket
+- [Soothing Noise Player](https://f-droid.org/en/packages/ie.delilahsthings.soothingloop/) - Android app inspired by Blanket
+- [Blanket Web](https://apps.roanapur.de/blanket/) - Web clone of Blanket
